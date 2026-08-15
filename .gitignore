@@ -1,0 +1,88 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.swp
+
+pids
+logs
+results
+tmp
+
+# Coverage reports
+coverage
+
+# API keys and secrets
+.env
+
+# Dependency directory
+node_modules
+bower_components
+.pnpm-store
+
+# Editors
+.idea
+*.iml
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Ignore built ts files
+dist/
+
+__pycache__/
+
+/.yalc
+yalc.lock
+
+.vscode/settings.json
+
+# Ignore output folder
+
+backend/out
+
+# Make sure to ignore any instance of the loader's decky_plugin.py
+decky_plugin.py
+
+# Ignore decky CLI for building plugins
+out
+out/*
+
+# Locally retained upstream release archives. These are never committed or packaged.
+upstream-archive-cache/
+cli/
+cli/*
+cli/decky
+
+# generated files (uncommented for now, need in git for store build deploys)
+# py_modules/lsfg_vk/config_schema_generated.py
+# py_modules/lsfg_vk/configuration_helpers_generated.py
+# src/config/generatedConfigSchema.ts
+
+# Additional development artifacts
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+*.egg-info/
+.coverage
+htmlcov/
+.tox/
+.eslintcache
+.turbo/
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# IDE specific files (beyond what's already covered)
+*.sublime-project
+*.sublime-workspace
+.vscode/settings.json
+.vscode/.ropeproject
