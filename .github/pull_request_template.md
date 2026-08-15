@@ -4,11 +4,7 @@
 
 ## Verification
 
-- [ ] `pnpm test`
-- [ ] `pnpm run check:generated`
-- [ ] `pnpm run check:shell`
-- [ ] `pnpm typecheck`
-- [ ] `pnpm run build`
+- [ ] `pnpm check`
 
 List any command that could not be run and explain the blocker.
 

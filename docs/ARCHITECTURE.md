@@ -32,14 +32,14 @@ to focused services.
 
 ## Configuration contract
 
-`shared_config.py` is the source of truth for fields, types, defaults, and
-ranges. `scripts/generate_ts_schema.py` generates:
+`shared_config.py` is the source of truth for fields, types, and defaults.
+`scripts/generate_ts_schema.py` generates:
 
 - `src/config/generatedConfigSchema.ts`
 - `py_modules/lsfg_vk/config_schema_generated.py`
 
 Configuration is stored as named profiles in TOML. The backend validates field
-types and ranges, validates new/renamed profile names, and generates a quoted
+types, validates new/renamed profile names, and generates a quoted
 launch wrapper. The frontend merges generated defaults when reading older
 backend data so newly introduced fields have predictable values.
 
@@ -82,13 +82,14 @@ frontend, downloads checksum-pinned host/Flatpak payloads, validates architectur
 paths and experimental layer identity, assembles the Decky ZIP, and checks
 archive integrity.
 
-`scripts/publish-package.sh` additionally requires a clean worktree, validates
-release metadata and tag ancestry, creates/pushes a tag, and publishes a GitHub
-prerelease. It is intentionally excluded from CI.
+`scripts/publish-package.sh` additionally requires a clean worktree before and
+after packaging, validates release metadata and tag ancestry, creates/pushes a
+tag, and publishes a GitHub prerelease. It is intentionally excluded from CI.
 
 ## Verification
 
-- `pnpm check` — full non-publishing local/PR gate; regenerates bindings.
+- `pnpm check` — full non-publishing local/PR gate; regenerates configuration
+  bindings and fails if either they or the generated translation bundle drift.
 - `pnpm test` — current Python unit suite.
 - `pnpm typecheck` — strict TypeScript check.
 - `pnpm run build` — i18n validation and production frontend bundle.
